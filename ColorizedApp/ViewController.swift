@@ -23,50 +23,81 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupRgbSlider()
         changeColor()
-        rgbSliderChanged(self)
+        rgbSliderChanged(redSlider)
+        rgbSliderChanged(greenSlider)
+        rgbSliderChanged(blueSlider)
         
         colorView.layer.cornerRadius = 12
         colorView.layer.masksToBounds = true
         
     }
     
-    func changeColor() {
-        colorView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1 )
-    }
-    
-    @IBAction func rgbSliderChanged(_ sender: Any) {
+    @IBAction func rgbSliderChanged(_ sender: UISlider) {
         changeColor()
-        let valueRed = redSlider.value
-        let valueGreen = greenSlider.value
-        let valueBlue = blueSlider.value
         
-        redLabel.text = String(format: "%.2f", valueRed)
-        greenLabel.text = String(format: "%.2f", valueGreen)
-        blueLabel.text = String(format: "%.2f", valueBlue)
+        var valueRed = redSlider.value
+        var valueGreen = greenSlider.value
+        var valueBlue = blueSlider.value
+        
+        switch sender {
+             case redSlider:
+                 valueRed = sender.value
+            redLabel.text = String(format: "%.2f", valueRed)
+             case greenSlider:
+                 valueGreen = sender.value
+            greenLabel.text = String(format: "%.2f", valueGreen)
+             case blueSlider:
+                 valueBlue = sender.value
+            blueLabel.text = String(format: "%.2f", valueBlue)
+             default:
+                 break
+             }
+        
+        
+//        if sender == redSlider {
+//            valueRed = sender.value
+//        } else if sender == greenSlider {
+//            valueGreen = sender.value
+//        } else if sender == blueSlider {
+//            valueBlue = sender.value
+//        }
+//
+//        redLabel.text = String(format: "%.2f", valueRed)
+//        greenLabel.text = String(format: "%.2f", valueGreen)
+//        blueLabel.text = String(format: "%.2f", valueBlue)
+        
     }
     
     // MARK: - Private Methods
     
-    private func setupRgbSlider(){
-        redSlider.value = 0.5
-        redSlider.minimumValue = 0
-        redSlider.maximumValue = 1
-        
-        greenSlider.value = 0.5
-        greenSlider.minimumValue = 0
-        greenSlider.maximumValue = 1
-        
-        blueSlider.value = 0.5
-        blueSlider.minimumValue = 0
-        blueSlider.maximumValue = 1
-        
-        changeColor()
-        
+   private func changeColor() {
+        colorView.backgroundColor = UIColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1
+        )
     }
-    
 }
+    
+//    private func setupRgbSlider(){
+//        redSlider.value = 0.5  лишний код
+//        redSlider.minimumValue = 0
+//        redSlider.maximumValue = 1
+        
+//        greenSlider.value = 0.5 лишний код
+//        greenSlider.minimumValue = 0
+//        greenSlider.maximumValue = 1
+        
+//        blueSlider.value = 0.5 лишний код
+//        blueSlider.minimumValue = 0
+//        blueSlider.maximumValue = 1
+        
+        
+    
+    
+
 
 
 
