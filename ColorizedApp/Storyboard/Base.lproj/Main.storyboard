@@ -118,7 +118,7 @@
                                                     <constraint firstAttribute="width" constant="57" id="hTJ-1f-Mpk"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="nHK-4K-W0z"/>
                                                 </connections>
@@ -129,7 +129,7 @@
                                                     <constraint firstAttribute="width" constant="57" id="EXb-97-mox"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Cn7-4B-cIW"/>
                                                 </connections>
@@ -140,7 +140,7 @@
                                                     <constraint firstAttribute="width" constant="57" id="Imh-Ja-5c6"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="GNk-Qg-es0"/>
                                                 </connections>
